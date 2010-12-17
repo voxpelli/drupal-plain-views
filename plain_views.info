@@ -1,0 +1,6 @@
+; $Id: embed_views.info,v 1.1 2009/05/23 14:25:00 grndlvl Exp $
+name = Plain Views Display
+description = Defines plain view display.
+package = Views
+dependencies[] = views
+core = 6.x

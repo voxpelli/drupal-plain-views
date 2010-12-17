@@ -1,0 +1,37 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Integration with the views module to create a plain views display.
+ */
+
+/**
+ * Implementation of hook_views_api_version().
+ */
+function plain_views_api_version() {
+  return array(
+    'api' => 2,
+    'path' => drupal_get_path('module', 'plain_views'),
+  );
+}
+
+/**
+ * Implementation of hook_views_plugins
+ */
+function plain_views_views_plugins() {
+  return array(
+    'display' => array(
+      'plain' => array(
+        'title' => t('Plain'),
+        'help' => t("Creates a display for embed that doesn't add any extra tags at all."),
+        'handler' => 'plain_views_plugin_display_plain',
+        'use ajax' => FALSE,
+        'use pager' => FALSE,
+        'use more' => FALSE,
+        'accept attachments' => FALSE,
+        'path' => drupal_get_path('module', 'plain_views') . '/includes',
+      ),
+    ),
+  );
+}
